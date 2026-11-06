@@ -27,3 +27,14 @@ def allocate(students, rooms):
     if i < len(queue):
         raise ValueError(f"{len(queue) - i} students have no seat, add rooms")
     return plan
+def find_seat(plan, query):
+    q = query.strip().lower()
+    matches = []
+    if not q:
+        return matches
+    for room, grid in plan.items():
+        for r, row in enumerate(grid, start=1):
+            for c, seat in enumerate(row, start=1):
+                if seat and (seat["name"].lower() == q or seat["roll_no"].lower() == q):
+                    matches.append({"room": room, "row": r, "col": c, "student": seat})
+    return matches

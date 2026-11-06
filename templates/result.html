@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seating Plan</title>
+  <style>
+    body { font-family: Arial; margin: 30px; }
+    table { border-collapse: collapse; margin-bottom: 30px; }
+    td { border: 1px solid #444; padding: 10px; text-align: center; min-width: 90px; }
+    .empty { background: #eee; }
+  </style>
+</head>
+<body>
+  <h1>Seating Plan</h1>
+  {% if error %}
+    <p style="color: red;">{{ error }}</p>
+  {% endif %}
+  {% for room, grid in plan.items() %}
+    <h2>Room {{ room }}</h2>
+    <table>
+      {% for row in grid %}
+      <tr>
+        {% for seat in row %}
+          {% if seat %}
+            <td>{{ seat.roll_no }}<br>{{ seat.name }}<br><small>{{ seat.branch }}</small></td>
+          {% else %}
+            <td class="empty">empty</td>
+          {% endif %}
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  {% endfor %}
+  <a href="/">Back</a>
+</body>
+</html>

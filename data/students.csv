@@ -1,13 +1,13 @@
-echo roll_no,name,branch> data\students.csv
-echo 101,Aman,CSE>> data\students.csv
-echo 102,Bhavna,CSE>> data\students.csv
-echo 103,Chirag,CSE>> data\students.csv
-echo 104,Divya,CSE>> data\students.csv
-echo 105,Eshan,ECE>> data\students.csv
-echo 106,Farah,ECE>> data\students.csv
-echo 107,Gagan,ECE>> data\students.csv
-echo 108,Harleen,ECE>> data\students.csv
-echo 109,Ishaan,ME>> data\students.csv
-echo 110,Jasleen,ME>> data\students.csv
-echo 111,Karan,ME>> data\students.csv
-echo 112,Lovely,ME>> data\students.csv
+roll_no,name,branch
+101,Aman,CSE
+102,Bhavna,CSE
+103,Chirag,CSE
+104,Divya,CSE
+105,Eshan,ECE
+106,Farah,ECE
+107,Gagan,ECE
+108,Harleen,ECE
+109,Ishaan,ME
+110,Jasleen,ME
+111,Karan,ME
+112,Lovely,ME

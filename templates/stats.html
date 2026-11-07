@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Statistics{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Statistics</h2>
+  <table>
+    <tr><th>Total students</th><td>{{ total }}</td></tr>
+    <tr><th>Rooms</th><td>{{ rooms }}</td></tr>
+    <tr><th>Benches</th><td>{{ benches }}</td></tr>
+    <tr><th>Total seats</th><td>{{ seats }}</td></tr>
+    <tr><th>Free seats</th><td>{{ free }}</td></tr>
+  </table>
+  <h3>Students per branch</h3>
+  <table>
+    {% for b, n in by_branch.items() %}
+    <tr><td>{{ b }}</td><td>{{ n }}</td></tr>
+    {% endfor %}
+  </table>
+</div>
+<p class="noprint"><a class="btn" href="/">Home</a></p>
+{% endblock %}

@@ -1,35 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Seating Plan</title>
-  <style>
-    body { font-family: Arial; margin: 30px; }
-    table { border-collapse: collapse; margin-bottom: 30px; }
-    td { border: 1px solid #444; padding: 10px; text-align: center; min-width: 90px; }
-    .empty { background: #eee; }
-  </style>
-</head>
-<body>
-  <h1>Seating Plan</h1>
-  {% if error %}
-    <p style="color: red;">{{ error }}</p>
-  {% endif %}
-  {% for room, grid in plan.items() %}
-    <h2>Room {{ room }}</h2>
-    <table>
-      {% for row in grid %}
-      <tr>
-        {% for seat in row %}
-          {% if seat %}
-            <td>{{ seat.roll_no }}<br>{{ seat.name }}<br><small>{{ seat.branch }}</small></td>
+{% extends "base.html" %}
+{% block title %}Full Seating Plan{% endblock %}
+{% block content %}
+{% if error %}<div class="card"><p style="color:red;">{{ error }}</p></div>{% endif %}
+{% for room, grid in plan.items() %}
+<div class="card">
+  <h2>Room {{ room }}: {{ rooms[room].block }}, {{ rooms[room].floor }}</h2>
+  <p class="legend"><span class="b-CSE">CSE</span><span class="b-ECE">ECE</span><span class="b-ME">ME</span></p>
+  <div style="background:#1f3a68;color:#fff;text-align:center;padding:8px;border-radius:6px;margin-bottom:14px;">Board / Front of room</div>
+  {% set cols = grid[0]|length %}
+  {% for row in grid %}
+    {% set r = loop.index0 %}
+    <div class="bench-row" style="--cols: {{ cols }};">
+    {% for bench in row %}
+      <div class="bench">
+        <div class="no">Bench {{ r * cols + loop.index }}</div>
+        {% for s in bench %}
+          {% if s %}
+            <div class="seat b-{{ s.branch }}">{{ s.roll_no }}<br>{{ s.name }}</div>
           {% else %}
-            <td class="empty">empty</td>
+            <div class="seat empty">empty</div>
           {% endif %}
         {% endfor %}
-      </tr>
-      {% endfor %}
-    </table>
+      </div>
+    {% endfor %}
+    </div>
   {% endfor %}
-  <a href="/">Back</a>
-</body>
-</html>
+  <p class="noprint"><a class="btn" href="/sheet/{{ room }}">Invigilator sheet</a></p>
+</div>
+{% endfor %}
+<p class="noprint"><a class="btn" href="/">Home</a></p>
+{% endblock %}

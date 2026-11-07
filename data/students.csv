@@ -1,13 +1,71 @@
-roll_no,name,branch
-101,Aman,CSE
-102,Bhavna,CSE
-103,Chirag,CSE
-104,Divya,CSE
-105,Eshan,ECE
-106,Farah,ECE
-107,Gagan,ECE
-108,Harleen,ECE
-109,Ishaan,ME
-110,Jasleen,ME
-111,Karan,ME
-112,Lovely,ME
+roll_no,name,branch,class,year
+101,Aman,CSE,B.Tech,3
+102,Bhavna,CSE,B.Tech,3
+103,Chirag,CSE,B.Tech,3
+104,Divya,CSE,B.Tech,3
+105,Eshan,ECE,B.Tech,3
+106,Farah,ECE,B.Tech,3
+107,Gagan,ECE,B.Tech,3
+108,Harleen,ECE,B.Tech,3
+109,Ishaan,ME,B.Tech,3
+110,Jasleen,ME,B.Tech,3
+111,Karan,ME,B.Tech,3
+112,Lovely,ME,B.Tech,3
+113,Mehak,CSE,B.Tech,3
+114,Navdeep,CSE,B.Tech,3
+115,Simran,ECE,B.Tech,3
+116,Tarun,ECE,B.Tech,3
+117,Umang,ME,B.Tech,3
+118,Vishal,ME,B.Tech,3
+119,Yuvraj,CSE,B.Tech,3
+120,Zoya,ECE,B.Tech,3
+121,Arjun,ME,B.Tech,3
+122,Riya,CSE,B.Tech,3
+123,Kabir,ECE,B.Tech,3
+124,Naina,ME,B.Tech,3
+125,Student 125,ME,B.Tech,3
+126,Student 126,CSE,B.Tech,3
+127,Student 127,ECE,B.Tech,3
+128,Student 128,ME,B.Tech,3
+129,Student 129,CSE,B.Tech,3
+130,Student 130,ECE,B.Tech,3
+131,Student 131,ME,B.Tech,3
+132,Student 132,CSE,B.Tech,3
+133,Student 133,ECE,B.Tech,3
+134,Student 134,ME,B.Tech,3
+135,Student 135,CSE,B.Tech,3
+136,Student 136,ECE,B.Tech,3
+137,Student 137,ME,B.Tech,3
+138,Student 138,CSE,B.Tech,3
+139,Student 139,ECE,B.Tech,3
+140,Student 140,ME,B.Tech,3
+141,Student 141,CSE,B.Tech,3
+142,Student 142,ECE,B.Tech,3
+143,Student 143,ME,B.Tech,3
+144,Student 144,CSE,B.Tech,3
+145,Student 145,ECE,B.Tech,3
+146,Student 146,ME,B.Tech,3
+147,Student 147,CSE,B.Tech,3
+148,Student 148,ECE,B.Tech,3
+149,Student 149,ME,B.Tech,3
+150,Student 150,CSE,B.Tech,3
+151,Student 151,ECE,B.Tech,3
+152,Student 152,ME,B.Tech,3
+153,Student 153,CSE,B.Tech,3
+154,Student 154,ECE,B.Tech,3
+155,Student 155,ME,B.Tech,3
+156,Student 156,CSE,B.Tech,3
+157,Student 157,ECE,B.Tech,3
+158,Student 158,ME,B.Tech,3
+159,Student 159,CSE,B.Tech,3
+160,Student 160,ECE,B.Tech,3
+161,Student 161,ME,B.Tech,3
+162,Student 162,CSE,B.Tech,3
+163,Student 163,ECE,B.Tech,3
+164,Student 164,ME,B.Tech,3
+165,Student 165,CSE,B.Tech,3
+166,Student 166,ECE,B.Tech,3
+167,Student 167,ME,B.Tech,3
+168,Student 168,CSE,B.Tech,3
+169,Student 169,ECE,B.Tech,3
+170,Student 170,ME,B.Tech,3

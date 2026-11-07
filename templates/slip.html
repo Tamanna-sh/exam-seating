@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Your Seat Slip{% endblock %}
+{% block content %}
+{% if error %}
+  <div class="card"><p style="color:red;">{{ error }}</p></div>
+{% elif matches %}
+  {% for m in matches %}
+  <div class="card">
+    <h2 style="text-align:center;">Exam Seat Slip</h2>
+    <p style="text-align:center;">{{ config.university }}<br>{{ config.exam_name }}, {{ config.exam_date }}</p>
+    <table>
+      <tr><th>Name</th><td>{{ m.student.name }}</td></tr>
+      <tr><th>Roll number</th><td>{{ m.student.roll_no }}</td></tr>
+      <tr><th>Class and year</th><td>{{ m.student['class'] }}, Year {{ m.student.year }}</td></tr>
+      <tr><th>Branch</th><td>{{ m.student.branch }}</td></tr>
+      <tr><th>Room</th><td>{{ m.room }}</td></tr>
+      <tr><th>Location</th><td>{{ m.block }}, {{ m.floor }}</td></tr>
+            <tr><th>Invigilator</th><td>{{ m.invigilator }}</td></tr>
+      <tr><th>Bench and seat</th><td>Bench {{ m.bench_no }} (row {{ m.row }}), {{ m.side }} seat</td></tr>
+    </table>
+    <p>Carry this slip with your admit card.</p>
+    <p class="noprint">
+      <button onclick="window.print()">Print slip</button>
+      <a class="btn" href="/map/{{ m.room }}/{{ m.bench_no }}">View room map</a>
+    </p>
+  </div>
+  {% endfor %}
+{% else %}
+  <div class="card"><p>No student found for "{{ query }}". Check the spelling or try your roll number.</p></div>
+{% endif %}
+<p class="noprint"><a class="btn" href="/">Search again</a></p>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Invigilator Sheet{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Invigilator Sheet: Room {{ room }}</h2>
+  <p>{{ info.block }}, {{ info.floor }}</p>
+    <p><b>Invigilator:</b> {{ info.invigilator }}</p>
+  <table>
+    <tr><th>Bench</th><th>Seat</th><th>Roll number</th><th>Name</th><th>Branch</th><th>Signature</th></tr>
+    {% for e in entries %}
+    <tr><td>{{ e.bench_no }}</td><td>{{ e.side }}</td><td>{{ e.student.roll_no }}</td><td>{{ e.student.name }}</td><td>{{ e.student.branch }}</td><td></td></tr>
+    {% endfor %}
+  </table>
+  <p class="noprint"><button onclick="window.print()">Print sheet</button> <a class="btn" href="/generate">Back</a></p>
+</div>
+{% endblock %}

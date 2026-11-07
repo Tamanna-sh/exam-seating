@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Exam Seating{% endblock %}</title>
+  <style>
+    :root { --navy: #1f3a68; --accent: #3b6fd4; --bg: #eef2f9; }
+    * { box-sizing: border-box; }
+    body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; background: var(--bg); color: #1d2433; }
+    header { background: linear-gradient(135deg, #1f3a68, #3b6fd4); color: #fff; padding: 30px 30px 50px; text-align: center; }
+    header h1 { margin: 0; font-size: 28px; letter-spacing: 0.3px; }
+    header p { margin: 8px 0 0; opacity: 0.9; font-size: 15px; }
+    main { max-width: 1100px; margin: -30px auto 40px; padding: 0 20px; }
+    .card { background: #fff; border-radius: 14px; padding: 26px; box-shadow: 0 6px 20px rgba(31, 58, 104, 0.12); margin-bottom: 22px; }
+    .card h2 { margin-top: 0; color: var(--navy); }
+    a.btn, button { background: var(--navy); color: #fff; border: none; padding: 11px 22px; border-radius: 8px; font-size: 15px; text-decoration: none; cursor: pointer; display: inline-block; margin: 4px 4px 4px 0; transition: background 0.2s; }
+    a.btn:hover, button:hover { background: var(--accent); }
+    input[type=text] { width: 100%; max-width: 380px; padding: 12px 14px; font-size: 16px; border: 2px solid #cfd8ea; border-radius: 8px; margin-right: 6px; }
+    input[type=text]:focus { outline: none; border-color: var(--accent); }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    th, td { border: 1px solid #dde4f2; padding: 10px 12px; text-align: left; }
+    th { background: #e8edf7; color: var(--navy); width: 34%; }
+    tr:nth-child(even) td { background: #f8faff; }
+    .bench { display: inline-block; vertical-align: top; background: #fffdf7; border: 2px solid #b9a77c; border-radius: 8px; padding: 6px; margin: 6px; min-width: 132px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); font-size: 12px; text-align: center; }
+    .bench .no { font-weight: 700; color: #6b5a2e; margin-bottom: 4px; }
+    .seat { padding: 6px 4px; margin: 3px 0; border-radius: 6px; border-left: 5px solid transparent; min-height: 34px; }
+    .b-CSE { background: #dbe9ff; border-left-color: #3b6fd4; }
+    .b-ECE { background: #d9f4df; border-left-color: #2e9e4f; }
+    .b-ME { background: #ffe9cc; border-left-color: #e28a17; }
+    .empty { background: #f1f1f1; color: #999; border-left-color: #ddd; }
+    .mine { outline: 4px solid #d62828; box-shadow: 0 0 14px rgba(214, 40, 40, 0.5); }
+    .legend span { padding: 5px 12px; border-radius: 6px; margin-right: 8px; font-size: 13px; font-weight: 600; }
+    .hero { text-align: center; padding: 40px 26px; }
+    .hero h2 { font-size: 26px; }
+        .bench-row { display: grid; grid-template-columns: repeat(var(--cols), 200px); gap: 12px; margin-bottom: 12px; }
+    .bench-row .bench { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 0; min-width: 0; }
+    .bench-row .bench .no { grid-column: 1 / -1; }
+    .bench-row .seat { margin: 0; font-size: 12px; word-break: break-word; }
+    @media print { header, .noprint { display: none; } body { background: #fff; } main { margin: 0; } .card { box-shadow: none; border: 1px solid #ccc; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{ config.university }}</h1>
+    <p>{{ config.exam_name }}, {{ config.exam_date }}</p>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

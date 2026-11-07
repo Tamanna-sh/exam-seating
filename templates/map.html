@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Room Map{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Room {{ room }}: {{ info.block }}, {{ info.floor }}</h2>
+  <p>Your bench has a red outline.</p>
+  <p class="legend"><span class="b-CSE">CSE</span><span class="b-ECE">ECE</span><span class="b-ME">ME</span></p>
+  <div style="background:#1f3a68;color:#fff;text-align:center;padding:8px;border-radius:6px;margin-bottom:14px;">Board / Front of room</div>
+  {% set cols = grid[0]|length %}
+  {% for row in grid %}
+    {% set r = loop.index0 %}
+    <div class="bench-row" style="--cols: {{ cols }};">
+    {% for bench in row %}
+      {% set n = r * cols + loop.index %}
+      <div class="bench {% if n == highlight %}mine{% endif %}">
+        <div class="no">Bench {{ n }}</div>
+        {% for s in bench %}
+          {% if s %}
+            <div class="seat b-{{ s.branch }}">{{ s.roll_no }}<br>{{ s.name }}</div>
+          {% else %}
+            <div class="seat empty">empty</div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+<p class="noprint"><a class="btn" href="/">Home</a></p>
+{% endblock %}

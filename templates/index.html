@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head><title>Exam Seating Generator</title></head>
-<body style="font-family: Arial; text-align: center; margin-top: 80px;">
-  <h1>Find Your Exam Seat</h1>
+{% extends "base.html" %}
+{% block title %}Find Your Seat{% endblock %}
+{% block content %}
+<div class="card hero">
+  <h2>Find Your Exam Seat</h2>
+  <p>Enter your name or roll number to get your room, bench and seat.</p>
   <form action="/find" method="get">
-    <input type="text" name="q" placeholder="Enter your name or roll number"
-           style="padding: 12px; font-size: 16px; width: 280px;" required>
-    <button type="submit" style="padding: 12px 24px; font-size: 16px;">Search</button>
+    <input type="text" name="q" placeholder="Name or roll number" required>
+    <button type="submit">Search</button>
   </form>
-  <p style="margin-top: 40px;"><a href="/generate">View full seating plan</a></p>
-</body>
-</html>
+</div>
+<div class="card noprint" style="text-align:center;">
+  <a class="btn" href="/generate">Full seating plan</a>
+  <a class="btn" href="/stats">Statistics</a>
+</div>
+{% endblock %}
